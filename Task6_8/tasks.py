@@ -15,7 +15,11 @@ def get_unused_cyrillic_symbols(string):
     return list(all_cyrillic_chars - set(string))
 
 
-tasks = {'6': nums_greater_then_5, "12": get_unused_cyrillic_symbols}
+def bigger_natural_number(string):
+    return max(list(map(lambda x: int(x), filter(lambda x: int(x) > 1, findall(r'\d+', string)))))
+
+
+tasks = {'6': nums_greater_then_5, "12": get_unused_cyrillic_symbols, "13": bigger_natural_number}
 task = input("Enter task, you wanna solve (6, 12, 13): ")
 task_data = input("Enter task data: ")
 print("\n")
