@@ -1,8 +1,3 @@
+from common_funcs import list_of_strings_input
 print("Enter strings. For exit, just tap ENTER.")
-strings = []
-string = "str"
-while string != '':
-    string = input()
-    strings.append(string)
-strings = strings[0:-1]
-print(sorted(strings, key=lambda x: len(x)))
+print(sorted(list_of_strings_input(), key=lambda x: len(x)))

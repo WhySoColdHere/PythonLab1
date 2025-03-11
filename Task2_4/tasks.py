@@ -1,4 +1,5 @@
 from random import shuffle
+from common_funcs import choose_task
 
 
 def shuffle_words(string):
@@ -24,12 +25,4 @@ def shuffle_words_again(string):
     return ' '.join(spl_string)
 
 
-tasks = {'6': shuffle_words, "12": sort_symbols, "13": shuffle_words_again}
-task = input("Enter task, you wanna solve (6, 12, 13): ")
-task_data = input("Enter task data: ")
-print("\n")
-
-try:
-    print(tasks[task](task_data))
-except KeyError:
-    print("Task number is incorrect, try again.")
+print(choose_task(['6', '12', '13'], [shuffle_words, sort_symbols, shuffle_words_again]))

@@ -1,4 +1,5 @@
 from re import findall
+from common_funcs import choose_task
 
 
 def nums_greater_then_5(string):
@@ -16,15 +17,13 @@ def get_unused_cyrillic_symbols(string):
 
 
 def bigger_natural_number(string):
-    return max(list(map(lambda x: int(x), filter(lambda x: int(x) > 1, findall(r'\d+', string)))))
+    try:
+        return max(list(map(lambda x: int(x), filter(lambda x: int(x) > 1, findall(r'\d+', string)))))
+    except ValueError:
+        return 0
 
 
-tasks = {'6': nums_greater_then_5, "12": get_unused_cyrillic_symbols, "13": bigger_natural_number}
-task = input("Enter task, you wanna solve (6, 12, 13): ")
-task_data = input("Enter task data: ")
-print("\n")
-
-try:
-    print(tasks[task](task_data))
-except KeyError:
-    print("Task number is incorrect, try again.")
+print(choose_task(
+    ['6', "12", "13"],
+    [nums_greater_then_5, get_unused_cyrillic_symbols, bigger_natural_number])
+)
