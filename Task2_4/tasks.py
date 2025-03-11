@@ -13,3 +13,12 @@ def shuffle_words(string):
             splitted_string[i] = shuffle_word(splitted_string[i])
     return ' '.join(splitted_string)
 
+
+tasks = {'6': shuffle_words}
+task = input("Enter task, you wanna solve (6, 12, 13): ")
+task_data = input("Enter task data: ")
+
+try:
+    print('\n' + tasks[task](task_data))
+except KeyError:
+    print("Task number is incorrect, try again.")
