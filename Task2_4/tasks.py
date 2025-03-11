@@ -27,8 +27,9 @@ def shuffle_words_again(string):
 tasks = {'6': shuffle_words, "12": sort_symbols, "13": shuffle_words_again}
 task = input("Enter task, you wanna solve (6, 12, 13): ")
 task_data = input("Enter task data: ")
+print("\n")
 
 try:
-    print('\n' + tasks[task](task_data))
+    print(tasks[task](task_data))
 except KeyError:
     print("Task number is incorrect, try again.")
