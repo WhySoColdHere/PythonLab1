@@ -10,3 +10,6 @@ def func1(n):
             res += first_divider if not is_simple(first_divider) else 0
             res += second_divider if not is_simple(second_divider) and first_divider != second_divider else 0
     return res + 1 + n if not is_simple(n) else res + 1
+
+
+print(func1(int(input("Enter a number: "))))

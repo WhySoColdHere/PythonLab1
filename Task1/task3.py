@@ -17,5 +17,4 @@ def func3(n):
     return counter
 
 
-
-
+print(func3(int(input("Enter a number: "))))
