@@ -18,7 +18,13 @@ def sort_symbols(string: str):
     return ''.join(list(filter(lambda x: x.isdigit(), string)) + list(filter(lambda x: x.isalpha(), string)))
 
 
-tasks = {'6': shuffle_words, "12": sort_symbols}
+def shuffle_words_again(string):
+    spl_string = string.split(' ')
+    shuffle(spl_string)
+    return ' '.join(spl_string)
+
+
+tasks = {'6': shuffle_words, "12": sort_symbols, "13": shuffle_words_again}
 task = input("Enter task, you wanna solve (6, 12, 13): ")
 task_data = input("Enter task data: ")
 
